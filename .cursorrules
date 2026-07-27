@@ -1,0 +1,58 @@
+# CURSOR RULES — Token-Efficient, High-Signal Mode
+# Amaç: Minimum token ile maksimum doğru/kullanılabilir çıktı.
+
+## 1. YANIT TARZI
+- Açıklama yapma, doğrudan kodu/çözümü ver. Gerekçe istenmedikçe "neden" anlatma.
+- Kod bloğu dışında gereksiz giriş/kapanış cümlesi kurma ("Elbette!", "Umarım işine yarar" gibi ifadeler YASAK).
+- Değişmeyen kodu tekrar yazma. Sadece değişen satırları/blokları göster (diff mantığı).
+- Birden fazla çözüm seçeneği sunma; en iyi tek çözümü ver. Alternatif istenirse ayrıca sorulur.
+- Yorum satırı ekleme, sadece kritik/karmaşık mantık noktalarına kısa (tek satır) yorum ekle.
+
+## 2. BAĞLAM YÖNETİMİ
+- İlgisiz dosyaları okuma/tarama. Sadece görevle doğrudan ilişkili dosya(lar)a odaklan.
+- Büyük dosyalarda tüm dosyayı yeniden yazma; sadece ilgili fonksiyon/bölümü değiştir.
+- Yeni bağımlılık/kütüphane ekleme önerisi yapmadan önce mevcut proje yapısını (package.json, requirements.txt vb.) kontrol et, zaten var olanı kullan.
+- Varsayım yapman gerekiyorsa tek satırlık kısa bir varsayım notu düş, uzun açıklama yazma.
+
+## 3. KOD STANDARTLARI
+- Proje dilinde ve mevcut kod stiline (naming convention, indentation, dosya yapısı) birebir uy.
+- Hata yönetimi (error handling) ve tip güvenliği (varsa TypeScript) her zaman dahil et — bunlar için ayrı açıklama istemiyorum.
+- Gereksiz soyutlama (over-engineering) yapma. En basit, okunabilir, sürdürülebilir çözümü tercih et.
+- Test istenmedikçe test dosyası oluşturma.
+
+## 4. SORU SORMA POLİTİKASI
+- Görev net değilse tek bir netleştirici soru sor, sonra bekle.
+- Görev yeterince netse varsayımını belirt ve direkt uygula — onay bekleme.
+
+## 5. YASAKLAR
+- Konuşma diliyle uzun paragraflar yazma.
+- Aynı bilgiyi/kodu birden fazla kez tekrar etme.
+- İstenmeyen dosyalarda (README, changelog vb.) otomatik güncelleme yapma.
+- Emoji, motivasyon cümlesi, gereksiz özet kullanma.
+
+## 6. ÇIKTI FORMATI
+- Kod değişiklikleri: sadece değişen kod bloğu + dosya yolu.
+- Çoklu dosya değişikliğinde: dosya adı başlığı + değişen kısım (tam dosya değil).
+- Kısa özet gerekiyorsa en fazla 1-2 madde, düz metin değil bullet.
+
+## 7. STACK — Next.js + Tailwind CSS
+- App Router kullan (app/ dizini). Pages Router önerme.
+- Server Component varsayılan; "use client" sadece gerçekten gerekliyse (state, event, browser API) eklenir.
+- Stil için sadece Tailwind class'ları kullan; inline style veya ayrı .css dosyası önerme (globals.css hariç).
+- Tekrarlayan class kombinasyonlarını component'e çıkar, uzun className string'lerini tekrar tekrar yazma.
+- Gereksiz custom Tailwind config değişikliği önerme; varsayılan tema yeterliyse onu kullan.
+- Image için her zaman next/image, link için next/link kullan.
+
+## 8. SEO KURALLARI
+- Her sayfada metadata (title, description) tanımla — App Router'da generateMetadata veya statik metadata export ile.
+- Semantic HTML kullan (header, main, nav, section, article, footer); div/span'i sadece gerekli yerde kullan.
+- Görsellerde alt metni her zaman ekle.
+- Sayfa başına tek H1 kuralına uy, başlık hiyerarşisini (H1→H2→H3) bozma.
+- Mümkün olan sayfaları statik/SSG üret (SSR yalnızca gerçekten dinamik veri varsa).
+- Yeni sayfa eklerken sitemap.xml ve robots.txt'yi güncellemeyi hatırlat (otomatik güncelleme yapma, sadece belirt).
+- Structured data (JSON-LD) istenirse ekle, istenmedikçe önerme (gereksiz açıklama yapma, sadece "eklenebilir" notu düş).
+
+## 9. AUTHENTICATION (ileride eklenecek)
+- Auth kurulana kadar auth'a dair kod/bağımlılık ekleme, sadece ileride kolay entegre edilecek şekilde route/layout yapısını hazırla (örn. (auth) ve (protected) route grupları).
+- Auth eklenmesi gündeme geldiğinde önce hangi yöntemin kullanılacağını sor (NextAuth/Auth.js, Clerk, Supabase Auth, custom JWT vb.) — varsayım yapıp direkt kurulum yapma.
+- Auth sonrası: session kontrolü middleware.ts üzerinden yapılır, her sayfada tekrar tekrar kontrol kodu yazılmaz.

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="tr" class="h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#05050a" />
+  <title>Flow - Digital agency</title>
+  <meta name="description" content="Strateji, tasarım ve geliştirme — iddialı markalar için AI destekli dijital deneyimler." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            display: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            background: '#05050a',
+            foreground: '#f0f0ff',
+            surface: '#0d0d16',
+            border: '#1c1c30',
+            'border-bright': '#2a2a44',
+            'muted-foreground': '#6b6b90',
+            primary: '#7c6fff',
+            accent: '#a78bfa',
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <style>
+    html {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+    .font-display {
+      letter-spacing: -0.03em;
+    }
+    @keyframes float-slow {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-30px) scale(1.05); }
+    }
+    @keyframes float-medium {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(20px) scale(0.97); }
+    }
+    @keyframes shimmer {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+    @keyframes badge-pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(124, 111, 255, 0.4); }
+      50% { box-shadow: 0 0 0 8px rgba(124, 111, 255, 0); }
+    }
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-float-slow { animation: float-slow 8s ease-in-out infinite; }
+    .animate-float-medium { animation: float-medium 6s ease-in-out infinite; }
+    .animate-badge-pulse { animation: badge-pulse 2.4s ease-in-out infinite; }
+    .animate-fade-up-1 { animation: fade-up 0.7s ease both 0.1s; }
+    .animate-fade-up-2 { animation: fade-up 0.7s ease both 0.25s; }
+    .animate-fade-up-3 { animation: fade-up 0.7s ease both 0.45s; }
+    .animate-fade-up-4 { animation: fade-up 0.7s ease both 0.65s; }
+    .animate-fade-up-5 { animation: fade-up 0.7s ease both 0.8s; }
+    .gradient-text {
+      background: linear-gradient(135deg, #ffffff 0%, #a78bfa 40%, #7c6fff 70%, #c4b5fd 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 4s linear infinite;
+    }
+    .stroke-text {
+      -webkit-text-stroke-width: 1.5px;
+      -webkit-text-stroke-color: rgba(124, 111, 255, 0.7);
+      -webkit-text-fill-color: transparent;
+    }
+    .badge-label {
+      background: linear-gradient(90deg, #c4b5fd, #a78bfa, #7c6fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .cta-button {
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-button::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #7c6fff, #a78bfa);
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+    .cta-button:hover::before { opacity: 0.85; }
+    .cta-button::after {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      background: linear-gradient(135deg, #7c6fff, #a78bfa, #6d5af5);
+      border-radius: inherit;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      filter: blur(8px);
+    }
+    .cta-button:hover::after { opacity: 0.6; }
+    .cta-arrow { transition: transform 0.3s ease; }
+    .cta-button:hover .cta-arrow { transform: translateX(4px); }
+    #mobile-menu { display: none; }
+    #mobile-menu.open { display: flex; }
+  </style>
+</head>
+<body class="min-h-full bg-background text-foreground font-sans antialiased">
+
+  <!-- NavBar -->
+  <header class="fixed top-0 left-0 right-0 z-50">
+    <div class="mx-4 mt-4 md:mx-8 lg:mx-12 rounded-2xl border border-border bg-[#05050a]/80 backdrop-blur-xl px-6 py-4 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2" aria-label="Fabrika ana sayfa">
+        <span class="w-7 h-7 rounded-lg bg-primary flex items-center justify-center shrink-0">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M2 12L7 2L12 12" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3.5 9H10.5" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="font-display font-semibold tracking-tight">
+          FLOW<span class="text-primary"></span>
+        </span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8" aria-label="Ana menü">
+        <a href="#" class="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">Projeler</a>
+        <a href="#" class="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">Hizmetler</a>
+        <a href="#" class="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">Hakkımızda</a>
+        <a href="#" class="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">Blog</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a
+          href="#"
+          class="hidden md:inline-flex items-center gap-2 text-sm font-medium border border-border-bright rounded-xl px-4 py-2 hover:border-primary/60 hover:bg-primary/10 transition-all duration-200"
+        >
+          İletişime Geç
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <button
+          id="menu-btn"
+          class="md:hidden w-9 h-9 flex flex-col items-center justify-center gap-1.5 rounded-xl border border-border hover:border-border-bright transition-colors"
+          aria-label="Menüyü aç"
+          aria-expanded="false"
+        >
+          <span id="bar1" class="block w-4 h-0.5 bg-foreground transition-all duration-200"></span>
+          <span id="bar2" class="block w-4 h-0.5 bg-foreground transition-all duration-200"></span>
+          <span id="bar3" class="block w-4 h-0.5 bg-foreground transition-all duration-200"></span>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="mx-4 mt-2 md:hidden rounded-2xl border border-border bg-[#05050a]/95 backdrop-blur-xl px-6 py-6 flex-col gap-4">
+      <a href="#" class="text-base text-muted-foreground hover:text-foreground transition-colors py-1 border-b border-border">Projeler</a>
+      <a href="#" class="text-base text-muted-foreground hover:text-foreground transition-colors py-1 border-b border-border">Hizmetler</a>
+      <a href="#" class="text-base text-muted-foreground hover:text-foreground transition-colors py-1 border-b border-border">Hakkımızda</a>
+      <a href="#" class="text-base text-muted-foreground hover:text-foreground transition-colors py-1 border-b border-border">Blog</a>
+      <a href="#" class="inline-flex items-center justify-center gap-2 text-sm font-medium border border-border-bright rounded-xl px-4 py-3 hover:border-primary/60 hover:bg-primary/10 transition-all duration-200 mt-2">
+        İletişime Geç
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main class="min-h-screen bg-background text-foreground">
+    <section class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6 pt-32 pb-24" aria-label="Karşılama">
+
+      <!-- Background -->
+      <div aria-hidden="true" class="pointer-events-none absolute inset-0 overflow-hidden">
+        <div
+          class="animate-float-slow absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full opacity-[0.18]"
+          style="background: radial-gradient(circle, #7c6fff 0%, transparent 70%);"
+        ></div>
+        <div
+          class="animate-float-medium absolute -bottom-60 -right-20 w-[700px] h-[700px] rounded-full opacity-[0.14]"
+          style="background: radial-gradient(circle, #6d5af5 0%, transparent 70%);"
+        ></div>
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] rounded-full opacity-[0.07]"
+          style="background: radial-gradient(ellipse, #a78bfa 0%, transparent 65%);"
+        ></div>
+        <div
+          class="absolute inset-0 opacity-[0.035]"
+          style="background-image: linear-gradient(#7c6fff 1px, transparent 1px), linear-gradient(90deg, #7c6fff 1px, transparent 1px); background-size: 72px 72px;"
+        ></div>
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,transparent_40%,#05050a_100%)]"></div>
+      </div>
+
+      <!-- Content -->
+      <div class="relative z-10 flex flex-col items-center text-center max-w-5xl mx-auto">
+
+        <!-- Badge -->
+        <div class="animate-fade-up-1 mb-8">
+          <div
+            class="animate-badge-pulse inline-flex items-center gap-2.5 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 backdrop-blur-sm"
+            role="status"
+            aria-label="AI destekli tasarım"
+          >
+            <span class="relative flex h-2 w-2 shrink-0" aria-hidden="true">
+              <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-60"></span>
+              <span class="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
+            </span>
+            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" class="text-accent shrink-0" aria-hidden="true">
+              <path d="M6.5 1L7.5 5.5L12 6.5L7.5 7.5L6.5 12L5.5 7.5L1 6.5L5.5 5.5L6.5 1Z" fill="currentColor"/>
+            </svg>
+            <span class="badge-label text-xs font-semibold tracking-widest uppercase">AI Destekli Tasarım</span>
+          </div>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="animate-fade-up-2 font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold leading-[1.05] tracking-tight text-balance mb-6">
+          Dijital Deneyimler
+          <br />
+          <span class="gradient-text">İnşa Ediyoruz</span>
+          <br />
+          <span class="stroke-text inline-block">Dönüştürün.</span>
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="animate-fade-up-3 text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl text-balance mb-10">
+          Strateji, tasarım ve geliştirme — iddialı markalar için tasarlandı. İlerici ekiplerle ortaklık kurarak büyüleyen ve ölçeklenebilir ürünler yaratıyoruz.
+        </p>
+
+        <!-- CTAs -->
+        <div class="animate-fade-up-4 flex flex-col sm:flex-row items-center gap-4">
+          <a
+            href="#"
+            class="cta-button group inline-flex items-center gap-3 rounded-2xl px-8 py-4 text-base font-semibold text-white shadow-[0_0_40px_rgba(124,111,255,0.25)] transition-all duration-300 hover:shadow-[0_0_60px_rgba(124,111,255,0.45)] hover:scale-[1.02] active:scale-[0.98]"
+            aria-label="Projenizi başlatın"
+          >
+            <span class="relative z-10 flex items-center gap-3">
+              Projenizi Başlatın
+              <span class="cta-arrow inline-flex items-center justify-center w-7 h-7 rounded-xl bg-white/15" aria-hidden="true">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                  <path d="M2 6.5H11M11 6.5L7 2.5M11 6.5L7 10.5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </span>
+          </a>
+          <a
+            href="#"
+            class="group inline-flex items-center gap-2.5 rounded-2xl border border-border-bright bg-transparent px-7 py-4 text-base font-medium text-muted-foreground transition-all duration-300 hover:border-primary/50 hover:text-foreground hover:bg-primary/5"
+            aria-label="Çalışmalarımızı inceleyin"
+          >
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" class="text-primary transition-transform duration-300 group-hover:scale-110" aria-hidden="true">
+              <circle cx="9" cy="9" r="7.5" stroke="currentColor" stroke-width="1.4"/>
+              <polygon points="7.5,6 13,9 7.5,12" fill="currentColor"/>
+            </svg>
+            Çalışmalarımızı İnceleyin
+          </a>
+        </div>
+
+        <!-- Trusted by -->
+        <div class="animate-fade-up-5 mt-20 w-full">
+          <div class="flex flex-col items-center gap-5">
+            <div class="flex items-center gap-4 w-full max-w-2xl">
+              <div class="flex-1 h-px bg-border"></div>
+              <span class="text-xs font-medium tracking-widest uppercase text-muted-foreground whitespace-nowrap">Güvenen ekipler</span>
+              <div class="flex-1 h-px bg-border"></div>
+            </div>
+            <div class="flex flex-wrap justify-center items-center gap-6 sm:gap-10">
+              <div class="group flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors duration-200 cursor-default" aria-label="Figma">
+                <span class="font-display text-lg font-bold" aria-hidden="true">F</span>
+                <span class="text-sm font-semibold tracking-tight">Figma</span>
+              </div>
+              <div class="group flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors duration-200 cursor-default" aria-label="Linear">
+                <span class="font-display text-lg font-bold" aria-hidden="true">L</span>
+                <span class="text-sm font-semibold tracking-tight">Linear</span>
+              </div>
+              <div class="group flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors duration-200 cursor-default" aria-label="Vercel">
+                <span class="font-display text-lg font-bold" aria-hidden="true">▲</span>
+                <span class="text-sm font-semibold tracking-tight">Vercel</span>
+              </div>
+              <div class="group flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors duration-200 cursor-default" aria-label="Notion">
+                <span class="font-display text-lg font-bold" aria-hidden="true">N</span>
+                <span class="text-sm font-semibold tracking-tight">Notion</span>
+              </div>
+              <div class="group flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors duration-200 cursor-default" aria-label="Framer">
+                <span class="font-display text-lg font-bold" aria-hidden="true">Fr</span>
+                <span class="text-sm font-semibold tracking-tight">Framer</span>
+              </div>
+              <div class="group flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors duration-200 cursor-default" aria-label="Arc">
+                <span class="font-display text-lg font-bold" aria-hidden="true">A</span>
+                <span class="text-sm font-semibold tracking-tight">Arc</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const bar1 = document.getElementById('bar1');
+    const bar2 = document.getElementById('bar2');
+    const bar3 = document.getElementById('bar3');
+    let open = false;
+
+    btn.addEventListener('click', () => {
+      open = !open;
+      menu.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open);
+      btn.setAttribute('aria-label', open ? 'Menüyü kapat' : 'Menüyü aç');
+      bar1.classList.toggle('rotate-45', open);
+      bar1.classList.toggle('translate-y-2', open);
+      bar2.classList.toggle('opacity-0', open);
+      bar3.classList.toggle('-rotate-45', open);
+      bar3.classList.toggle('-translate-y-2', open);
+    });
+  </script>
+
+</body>
+</html>
