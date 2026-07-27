@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="tr" class="h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#05050a" />
+  <title>Projeler — Vaka Çalışmaları & Sonuçlar | Flow</title>
+  <meta name="description" content="Flow vaka çalışmaları: önce-sonra karşılaştırmaları, strateji süreçleri ve ölçülebilir sonuçlar — dönüşüm oranı, trafik artışı ve performans metrikleri." />
+  <link rel="canonical" href="https://flow.agency/projeler.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Flow Projeler — Vaka Çalışmaları" />
+  <meta property="og:description" content="Her proje için strateji, önce-sonra ve elde edilen sonuçlar." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            display: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            background: '#05050a',
+            foreground: '#f0f0ff',
+            surface: '#0d0d16',
+            border: '#1c1c30',
+            'border-bright': '#2a2a44',
+            'muted-foreground': '#6b6b90',
+            primary: '#7c6fff',
+            accent: '#a78bfa',
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <style>
+    html { -webkit-font-smoothing: antialiased; }
+    .font-display { letter-spacing: -0.03em; }
+    #mobile-menu { display: none; }
+    #mobile-menu.open { display: flex; }
+    .project-card { transition: border-color 0.2s, transform 0.2s; }
+    .project-card:hover { border-color: rgba(124, 111, 255, 0.45); transform: translateY(-2px); }
+    .metric-pill { background: rgba(124, 111, 255, 0.1); border: 1px solid rgba(124, 111, 255, 0.25); }
+  </style>
+</head>
+<body class="min-h-full bg-background text-foreground font-sans antialiased">
+
+  <header class="fixed top-0 left-0 right-0 z-50">
+    <div class="mx-4 mt-4 md:mx-8 lg:mx-12 rounded-2xl border border-border bg-[#05050a]/80 backdrop-blur-xl px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2" aria-label="Flow ana sayfa">
+        <span class="w-7 h-7 rounded-lg bg-primary flex items-center justify-center shrink-0">
+          <span class="text-white text-sm font-bold font-display leading-none" aria-hidden="true">F</span>
+        </span>
+        <span class="font-display font-semibold tracking-tight">FLOW</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-8" aria-label="Ana menü">
+        <a href="projeler.html" class="text-sm text-foreground font-medium" aria-current="page">Projeler</a>
+        <a href="index.html#hizmetler" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Hizmetler</a>
+        <a href="index.html#hakkimizda" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Hakkımızda</a>
+        <a href="blog.html" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Blog</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="kesif.html" class="hidden md:inline-flex items-center gap-2 text-sm font-medium border border-border-bright rounded-xl px-4 py-2 hover:border-primary/60 hover:bg-primary/10 transition-all">Proje Başlat</a>
+        <button id="menu-btn" class="md:hidden w-9 h-9 flex flex-col items-center justify-center gap-1.5 rounded-xl border border-border hover:border-border-bright transition-colors" aria-label="Menüyü aç" aria-expanded="false">
+          <span id="bar1" class="block w-4 h-0.5 bg-foreground transition-all duration-200"></span>
+          <span id="bar2" class="block w-4 h-0.5 bg-foreground transition-all duration-200"></span>
+          <span id="bar3" class="block w-4 h-0.5 bg-foreground transition-all duration-200"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="mx-4 mt-2 md:hidden rounded-2xl border border-border bg-[#05050a]/95 backdrop-blur-xl px-6 py-6 flex-col gap-4">
+      <a href="projeler.html" class="text-base text-foreground font-medium py-1 border-b border-border">Projeler</a>
+      <a href="index.html#hizmetler" class="text-base text-muted-foreground hover:text-foreground transition-colors py-1 border-b border-border">Hizmetler</a>
+      <a href="index.html#hakkimizda" class="text-base text-muted-foreground hover:text-foreground transition-colors py-1 border-b border-border">Hakkımızda</a>
+      <a href="blog.html" class="text-base text-muted-foreground hover:text-foreground transition-colors py-1 border-b border-border">Blog</a>
+      <a href="kesif.html" class="inline-flex items-center justify-center gap-2 text-sm font-medium border border-border-bright rounded-xl px-4 py-3 hover:border-primary/60 hover:bg-primary/10 transition-all mt-2">Proje Başlat</a>
+    </div>
+  </header>
+
+  <main class="px-6 pt-32 pb-24 max-w-6xl mx-auto">
+    <header class="mb-14 text-center max-w-3xl mx-auto">
+      <p class="text-xs font-semibold tracking-widest uppercase text-primary mb-4">Vaka Çalışmaları</p>
+      <h1 class="font-display text-4xl sm:text-5xl font-extrabold tracking-tight mb-5">Strateji, Tasarım ve Ölçülebilir Sonuçlar</h1>
+      <p class="text-muted-foreground text-lg leading-relaxed">Her proje bir galeri görseli değil — önce-sonra karşılaştırması, uygulanan strateji ve elde edilen metriklerle anlatılan bir dönüşüm hikayesidir.</p>
+    </header>
+
+    <section aria-label="Proje listesi">
+      <div class="grid gap-8 lg:grid-cols-2">
+
+        <article class="project-card rounded-2xl border border-border bg-surface overflow-hidden flex flex-col">
+          <div class="grid grid-cols-2 gap-px bg-border" aria-hidden="true">
+            <div class="aspect-[4/3] bg-[#1a1a28] flex flex-col p-4">
+              <div class="h-2 w-12 rounded bg-[#333350] mb-3"></div>
+              <div class="flex-1 rounded border border-[#2a2a40] bg-[#12121c] p-2 space-y-1.5">
+                <div class="h-1.5 w-full rounded bg-[#2a2a40]"></div>
+                <div class="h-1.5 w-3/4 rounded bg-[#2a2a40]"></div>
+                <div class="h-8 w-full rounded bg-[#222235] mt-2"></div>
+              </div>
+              <span class="text-[10px] text-muted-foreground mt-2 uppercase tracking-wider">Önce</span>
+            </div>
+            <div class="aspect-[4/3] bg-[#0f0f1a] flex flex-col p-4">
+              <div class="h-2 w-12 rounded bg-primary/40 mb-3"></div>
+              <div class="flex-1 rounded border border-primary/20 bg-gradient-to-br from-primary/10 to-transparent p-2 space-y-1.5">
+                <div class="h-1.5 w-full rounded bg-primary/30"></div>
+                <div class="h-1.5 w-2/3 rounded bg-accent/30"></div>
+                <div class="h-8 w-full rounded bg-primary/20 mt-2"></div>
+              </div>
+              <span class="text-[10px] text-accent mt-2 uppercase tracking-wider">Sonra</span>
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-primary/15 text-accent">Kurumsal Web</span>
+              <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-primary/15 text-accent">B2B SaaS</span>
+            </div>
+            <h2 class="font-display text-xl font-bold tracking-tight mb-2">
+              <a href="projeler/novatech-kurumsal-web.html" class="hover:text-primary transition-colors">NovaTech — Kurumsal Web Yenileme</a>
+            </h2>
+            <p class="text-sm text-muted-foreground leading-relaxed flex-1 mb-4">Eski WordPress sitesinden modern headless mimariye geçiş; güven unsurları ve demo talep akışı yeniden kurgulandı.</p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="metric-pill text-xs font-semibold text-accent px-2.5 py-1 rounded-full">+142% organik trafik</span>
+              <span class="metric-pill text-xs font-semibold text-accent px-2.5 py-1 rounded-full">%4,8 demo dönüşümü</span>
+            </div>
+            <a href="projeler/novatech-kurumsal-web.html" class="text-sm font-medium text-primary hover:text-accent transition-colors">Vaka çalışmasını incele →</a>
+          </div>
+        </article>
+
+        <article class="project-card rounded-2xl border border-border bg-surface overflow-hidden flex flex-col">
+          <div class="grid grid-cols-2 gap-px bg-border" aria-hidden="true">
+            <div class="aspect-[4/3] bg-[#1a1520] flex flex-col p-4">
+              <div class="h-2 w-10 rounded bg-[#3d3040] mb-3"></div>
+              <div class="flex-1 grid grid-cols-2 gap-1">
+                <div class="rounded bg-[#251820]"></div>
+                <div class="rounded bg-[#251820]"></div>
+                <div class="rounded bg-[#251820]"></div>
+                <div class="rounded bg-[#251820]"></div>
+              </div>
+              <span class="text-[10px] text-muted-foreground mt-2 uppercase tracking-wider">Önce</span>
+            </div>
+            <div class="aspect-[4/3] bg-[#0f0a14] flex flex-col p-4">
+              <div class="h-2 w-10 rounded bg-accent/40 mb-3"></div>
+              <div class="flex-1 grid grid-cols-2 gap-1">
+                <div class="rounded bg-gradient-to-br from-accent/20 to-primary/10"></div>
+                <div class="rounded bg-gradient-to-br from-accent/20 to-primary/10"></div>
+                <div class="rounded bg-gradient-to-br from-accent/20 to-primary/10"></div>
+                <div class="rounded bg-gradient-to-br from-accent/20 to-primary/10"></div>
+              </div>
+              <span class="text-[10px] text-accent mt-2 uppercase tracking-wider">Sonra</span>
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-primary/15 text-accent">E-ticaret</span>
+              <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-primary/15 text-accent">CRO</span>
+            </div>
+            <h2 class="font-display text-xl font-bold tracking-tight mb-2">
+              <a href="projeler/lumiere-e-ticaret.html" class="hover:text-primary transition-colors">Lumière — E-ticaret Dönüşüm Optimizasyonu</a>
+            </h2>
+            <p class="text-sm text-muted-foreground leading-relaxed flex-1 mb-4">Ürün sayfası UX yeniden tasarımı, sepet sürtünmesi azaltma ve kişiselleştirilmiş öneri motoru entegrasyonu.</p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="metric-pill text-xs font-semibold text-accent px-2.5 py-1 rounded-full">+67% sepet dönüşümü</span>
+              <span class="metric-pill text-xs font-semibold text-accent px-2.5 py-1 rounded-full">-%34 terk oranı</span>
+            </div>
+            <a href="projeler/lumiere-e-ticaret.html" class="text-sm font-medium text-primary hover:text-accent transition-colors">Vaka çalışmasını incele →</a>
+          </div>
+        </article>
+
+        <article class="project-card rounded-2xl border border-border bg-surface overflow-hidden flex flex-col">
+          <div class="grid grid-cols-2 gap-px bg-border" aria-hidden="true">
+            <div class="aspect-[4/3] bg-[#101820] flex flex-col p-4">
+              <div class="h-2 w-14 rounded bg-[#2a3540] mb-3"></div>
+              <div class="flex-1 rounded bg-[#0a1018] border border-[#1e2830] flex items-center justify-center">
+                <div class="w-16 h-10 rounded bg-[#1a2530]"></div>
+              </div>
+              <span class="text-[10px] text-muted-foreground mt-2 uppercase tracking-wider">Önce</span>
+            </div>
+            <div class="aspect-[4/3] bg-[#080e18] flex flex-col p-4">
+              <div class="h-2 w-14 rounded bg-primary/30 mb-3"></div>
+              <div class="flex-1 rounded bg-gradient-to-t from-primary/15 to-transparent border border-primary/20 flex items-end p-3">
+                <div class="w-full h-6 rounded bg-primary/25"></div>
+              </div>
+              <span class="text-[10px] text-accent mt-2 uppercase tracking-wider">Sonra</span>
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-primary/15 text-accent">Fintech</span>
+              <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-primary/15 text-accent">Landing Page</span>
+            </div>
+            <h2 class="font-display text-xl font-bold tracking-tight mb-2">
+              <a href="projeler/atlas-fintech.html" class="hover:text-primary transition-colors">Atlas Finans — Yatırım Platformu Lansmanı</a>
+            </h2>
+            <p class="text-sm text-muted-foreground leading-relaxed flex-1 mb-4">Güven odaklı bilgi mimarisi, interaktif getiri hesaplayıcı ve KYC onboarding akışı optimizasyonu.</p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="metric-pill text-xs font-semibold text-accent px-2.5 py-1 rounded-full">+89% kayıt tamamlama</span>
+              <span class="metric-pill text-xs font-semibold text-accent px-2.5 py-1 rounded-full">LCP 1,8 sn</span>
+            </div>
+            <a href="projeler/atlas-fintech.html" class="text-sm font-medium text-primary hover:text-accent transition-colors">Vaka çalışmasını incele →</a>
+          </div>
+        </article>
+
+        <article class="project-card rounded-2xl border border-border bg-surface overflow-hidden flex flex-col">
+          <div class="grid grid-cols-2 gap-px bg-border" aria-hidden="true">
+            <div class="aspect-[4/3] bg-[#141a12] flex flex-col p-4">
+              <div class="h-2 w-8 rounded bg-[#2a3528] mb-3"></div>
+              <div class="flex-1 rounded bg-[#0e140c] flex items-center justify-center">
+                <div class="text-[10px] text-[#3a4a38] font-bold tracking-widest">LOGO</div>
+              </div>
+              <span class="text-[10px] text-muted-foreground mt-2 uppercase tracking-wider">Önce</span>
+            </div>
+            <div class="aspect-[4/3] bg-[#0a1008] flex flex-col p-4">
+              <div class="h-2 w-8 rounded bg-emerald-500/30 mb-3"></div>
+              <div class="flex-1 rounded bg-gradient-to-br from-emerald-500/15 to-primary/10 flex items-center justify-center">
+                <div class="text-[10px] text-emerald-400/80 font-bold tracking-widest">VERDE</div>
+              </div>
+              <span class="text-[10px] text-accent mt-2 uppercase tracking-wider">Sonra</span>
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-primary/15 text-accent">Marka Kimliği</span>
+              <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-primary/15 text-accent">D2C</span>
+            </div>
+            <h2 class="font-display text-xl font-bold tracking-tight mb-2">
+              <a href="projeler/verde-organics.html" class="hover:text-primary transition-colors">Verde Organics — Marka &amp; Web Yeniden Doğuşu</a>
+            </h2>
+            <p class="text-sm text-muted-foreground leading-relaxed flex-1 mb-4">Marka stratejisi, görsel kimlik ve abonelik odaklı e-ticaret deneyimi — tek çatı altında yeniden inşa.</p>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="metric-pill text-xs font-semibold text-accent px-2.5 py-1 rounded-full">+210% abonelik</span>
+              <span class="metric-pill text-xs font-semibold text-accent px-2.5 py-1 rounded-full">+%52 marka araması</span>
+            </div>
+            <a href="projeler/verde-organics.html" class="text-sm font-medium text-primary hover:text-accent transition-colors">Vaka çalışmasını incele →</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <aside class="mt-16 rounded-2xl border border-border bg-surface p-8 text-center">
+      <h2 class="font-display text-2xl font-bold tracking-tight mb-3">Sıradaki vaka çalışması sizin olabilir</h2>
+      <p class="text-muted-foreground mb-6 max-w-lg mx-auto">Projenizi konuşalım — strateji, tasarım ve ölçülebilir hedeflerle başlayalım.</p>
+      <a href="kesif.html" class="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-white hover:opacity-90 transition-opacity">Keşif Formu →</a>
+    </aside>
+  </main>
+
+  <footer class="border-t border-border px-6 py-10 text-center text-sm text-muted-foreground">
+    <p>&copy; 2026 Flow. Tüm hakları saklıdır.</p>
+  </footer>
+
+  <script>
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const bar1 = document.getElementById('bar1');
+    const bar2 = document.getElementById('bar2');
+    const bar3 = document.getElementById('bar3');
+    let open = false;
+    btn.addEventListener('click', () => {
+      open = !open;
+      menu.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open);
+      bar1.classList.toggle('rotate-45', open);
+      bar1.classList.toggle('translate-y-2', open);
+      bar2.classList.toggle('opacity-0', open);
+      bar3.classList.toggle('-rotate-45', open);
+      bar3.classList.toggle('-translate-y-2', open);
+    });
+  </script>
+  <script src="js/whatsapp-widget.js"></script>
+</body>
+</html>

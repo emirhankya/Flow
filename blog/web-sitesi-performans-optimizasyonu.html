@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="tr" class="h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark" />
+  <title>Web Sitesi Performans Optimizasyonu: Core Web Vitals Rehberi | Flow Blog</title>
+  <meta name="description" content="Core Web Vitals rehberi: LCP, INP ve CLS metriklerini iyileştirerek web sitesi performans optimizasyonu ve SEO sıralamanızı güçlendirin." />
+  <link rel="canonical" href="https://flow.agency/blog/web-sitesi-performans-optimizasyonu.html" />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2026-07-28" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'], display: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'] },
+          colors: { background: '#05050a', foreground: '#f0f0ff', surface: '#0d0d16', border: '#1c1c30', 'muted-foreground': '#6b6b90', primary: '#7c6fff', accent: '#a78bfa' },
+        },
+      },
+    };
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    html { -webkit-font-smoothing: antialiased; }
+    .font-display { letter-spacing: -0.03em; }
+    .prose h2 { font-size: 1.5rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; letter-spacing: -0.02em; }
+    .prose h3 { font-size: 1.125rem; font-weight: 600; margin-top: 1.75rem; margin-bottom: 0.75rem; color: #a78bfa; }
+    .prose p { color: #6b6b90; line-height: 1.75; margin-bottom: 1.25rem; }
+    .prose ul { color: #6b6b90; margin-bottom: 1.25rem; padding-left: 1.5rem; list-style: disc; }
+    .prose li { margin-bottom: 0.5rem; line-height: 1.7; }
+    .prose a { color: #a78bfa; text-decoration: underline; }
+    .prose strong { color: #f0f0ff; font-weight: 600; }
+    .metric-table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; font-size: 0.875rem; }
+    .metric-table th, .metric-table td { border: 1px solid #1c1c30; padding: 0.75rem 1rem; text-align: left; }
+    .metric-table th { color: #f0f0ff; font-weight: 600; background: #0d0d16; }
+    .metric-table td { color: #6b6b90; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Web Sitesi Performans Optimizasyonu: Core Web Vitals Rehberi",
+    "datePublished": "2026-07-28",
+    "author": { "@type": "Organization", "name": "Flow" },
+    "publisher": { "@type": "Organization", "name": "Flow" },
+    "mainEntityOfPage": "https://flow.agency/blog/web-sitesi-performans-optimizasyonu.html"
+  }
+  </script>
+</head>
+<body class="min-h-full bg-background text-foreground font-sans antialiased">
+
+  <header class="fixed top-0 left-0 right-0 z-50">
+    <div class="mx-4 mt-4 md:mx-8 lg:mx-12 rounded-2xl border border-border bg-[#05050a]/80 backdrop-blur-xl px-6 py-4 flex items-center justify-between">
+      <a href="../index.html" class="flex items-center gap-2" aria-label="Flow ana sayfa">
+        <span class="w-7 h-7 rounded-lg bg-primary flex items-center justify-center shrink-0">
+          <span class="text-white text-sm font-bold font-display leading-none" aria-hidden="true">F</span>
+        </span>
+        <span class="font-display font-semibold tracking-tight">FLOW</span>
+      </a>
+      <a href="../blog.html" class="text-sm text-muted-foreground hover:text-foreground transition-colors">← Blog</a>
+    </div>
+  </header>
+
+  <main class="px-6 pt-32 pb-24 max-w-3xl mx-auto">
+    <nav aria-label="Breadcrumb" class="text-sm text-muted-foreground mb-8">
+      <ol class="flex flex-wrap gap-2">
+        <li><a href="../index.html" class="hover:text-foreground">Ana Sayfa</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="../blog.html" class="hover:text-foreground">Blog</a></li>
+        <li aria-hidden="true">/</li>
+        <li class="text-foreground">Performans Optimizasyonu</li>
+      </ol>
+    </nav>
+
+    <article>
+      <header class="mb-10">
+        <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-primary/15 text-accent">Performans</span>
+        <h1 class="font-display text-3xl sm:text-4xl font-extrabold tracking-tight mt-4 mb-4">Web Sitesi Performans Optimizasyonu: Core Web Vitals Rehberi</h1>
+        <div class="flex flex-wrap gap-4 text-sm text-muted-foreground">
+          <time datetime="2026-07-28">28 Temmuz 2026</time>
+          <span>5 dk okuma</span>
+        </div>
+      </header>
+
+      <div class="prose">
+        <p>Google'ın Core Web Vitals metrikleri, arama sıralamasını doğrudan etkileyen sayfa deneyimi sinyalleridir. <strong>Web sitesi performans optimizasyonu</strong> hem SEO hem de dönüşüm oranları için kritik öneme sahiptir.</p>
+
+        <h2>Core Web Vitals Hedefleri</h2>
+        <table class="metric-table">
+          <thead>
+            <tr>
+              <th>Metrik</th>
+              <th>Açıklama</th>
+              <th>Hedef</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>LCP</strong></td>
+              <td>Largest Contentful Paint — ana içeriğin yüklenme süresi</td>
+              <td>&lt; 2.5 saniye</td>
+            </tr>
+            <tr>
+              <td><strong>INP</strong></td>
+              <td>Interaction to Next Paint — etkileşim yanıt süresi</td>
+              <td>&lt; 200 ms</td>
+            </tr>
+            <tr>
+              <td><strong>CLS</strong></td>
+              <td>Cumulative Layout Shift — görsel kararlılık</td>
+              <td>&lt; 0.1</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>LCP İyileştirme Taktikleri</h2>
+        <ul>
+          <li>Hero görsellerini WebP/AVIF formatında sunun; responsive srcset kullanın</li>
+          <li>Kritik CSS'i inline edin, geri kalanını defer yükleyin</li>
+          <li>CDN ve edge caching ile sunucu yanıt süresini (TTFB) düşürün</li>
+          <li>Font-display: swap ile metin render gecikmesini önleyin</li>
+        </ul>
+
+        <h2>INP İyileştirme Taktikleri</h2>
+        <ul>
+          <li>JavaScript bundle boyutunu küçültün; code splitting uygulayın</li>
+          <li>Uzun görevleri (long tasks) parçalayın; Web Worker kullanın</li>
+          <li>Third-party script'leri (analytics, chat widget) lazy load edin</li>
+        </ul>
+
+        <h2>CLS İyileştirme Taktikleri</h2>
+        <ul>
+          <li>Görsellere width/height attribute'u ekleyin</li>
+          <li>Reklam ve embed alanları için sabit yükseklik ayırın</li>
+          <li>Web font yüklenirken fallback font ile layout shift'i minimize edin</li>
+        </ul>
+
+        <h2>Ölçüm Araçları</h2>
+        <p>Google PageSpeed Insights, Chrome DevTools Performance paneli ve Search Console Core Web Vitals raporu düzenli takip için yeterlidir. Field data (gerçek kullanıcı verisi) lab data'dan önceliklidir.</p>
+
+        <h2>Performans = Dijital Deneyim</h2>
+        <p>Hızlı bir site, <a href="dijital-deneyimler-nedir.html">dijital deneyimler</a>in temel taşıdır. Flow, <a href="kurumsal-web-tasarim-rehberi.html">kurumsal web tasarım</a> projelerinde performansı tasarım aşamasından itibaren planlar. <a href="../kesif.html">Projenizi başlatın</a>.</p>
+      </div>
+    </article>
+
+    <aside class="mt-16 pt-10 border-t border-border">
+      <h2 class="font-display text-lg font-bold mb-4">İlgili Yazılar</h2>
+      <ul class="space-y-3 text-sm">
+        <li><a href="kurumsal-web-tasarim-rehberi.html" class="text-accent hover:underline">Kurumsal Web Tasarım Rehberi</a></li>
+        <li><a href="dijital-deneyimler-nedir.html" class="text-accent hover:underline">Dijital Deneyimler Nedir?</a></li>
+        <li><a href="ux-ui-tasarim-trendleri-2026.html" class="text-accent hover:underline">UX/UI Tasarım Trendleri 2026</a></li>
+      </ul>
+    </aside>
+  </main>
+
+  <footer class="border-t border-border px-6 py-10 text-center text-sm text-muted-foreground">
+    <p>&copy; 2026 Flow. Tüm hakları saklıdır.</p>
+  </footer>
+  <script src="../js/whatsapp-widget.js"></script>
+</body>
+</html>

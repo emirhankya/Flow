@@ -125,12 +125,9 @@
   <!-- NavBar -->
   <header class="fixed top-0 left-0 right-0 z-50">
     <div class="mx-4 mt-4 md:mx-8 lg:mx-12 rounded-2xl border border-border bg-[#05050a]/80 backdrop-blur-xl px-6 py-4 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-2" aria-label="Fabrika ana sayfa">
+      <a href="index.html" class="flex items-center gap-2" aria-label="Flow ana sayfa">
         <span class="w-7 h-7 rounded-lg bg-primary flex items-center justify-center shrink-0">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-            <path d="M2 12L7 2L12 12" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M3.5 9H10.5" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
-          </svg>
+          <span class="text-white text-sm font-bold font-display leading-none" aria-hidden="true">F</span>
         </span>
         <span class="font-display font-semibold tracking-tight">
           FLOW<span class="text-primary"></span>
@@ -138,10 +135,10 @@
       </a>
 
       <nav class="hidden md:flex items-center gap-8" aria-label="Ana menü">
-        <a href="#" class="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">Projeler</a>
+        <a href="projeler.html" class="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">Projeler</a>
         <a href="#" class="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">Hizmetler</a>
         <a href="#" class="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">Hakkımızda</a>
-        <a href="#" class="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">Blog</a>
+        <a href="blog.html" class="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">Blog</a>
       </nav>
 
       <div class="flex items-center gap-3">
@@ -168,10 +165,10 @@
     </div>
 
     <div id="mobile-menu" class="mx-4 mt-2 md:hidden rounded-2xl border border-border bg-[#05050a]/95 backdrop-blur-xl px-6 py-6 flex-col gap-4">
-      <a href="#" class="text-base text-muted-foreground hover:text-foreground transition-colors py-1 border-b border-border">Projeler</a>
+      <a href="projeler.html" class="text-base text-muted-foreground hover:text-foreground transition-colors py-1 border-b border-border">Projeler</a>
       <a href="#" class="text-base text-muted-foreground hover:text-foreground transition-colors py-1 border-b border-border">Hizmetler</a>
       <a href="#" class="text-base text-muted-foreground hover:text-foreground transition-colors py-1 border-b border-border">Hakkımızda</a>
-      <a href="#" class="text-base text-muted-foreground hover:text-foreground transition-colors py-1 border-b border-border">Blog</a>
+      <a href="blog.html" class="text-base text-muted-foreground hover:text-foreground transition-colors py-1 border-b border-border">Blog</a>
       <a href="#" class="inline-flex items-center justify-center gap-2 text-sm font-medium border border-border-bright rounded-xl px-4 py-3 hover:border-primary/60 hover:bg-primary/10 transition-all duration-200 mt-2">
         İletişime Geç
       </a>
@@ -241,7 +238,7 @@
         <!-- CTAs -->
         <div class="animate-fade-up-4 flex flex-col sm:flex-row items-center gap-4">
           <a
-            href="#"
+            href="kesif.html"
             class="cta-button group inline-flex items-center gap-3 rounded-2xl px-8 py-4 text-base font-semibold text-white shadow-[0_0_40px_rgba(124,111,255,0.25)] transition-all duration-300 hover:shadow-[0_0_60px_rgba(124,111,255,0.45)] hover:scale-[1.02] active:scale-[0.98]"
             aria-label="Projenizi başlatın"
           >
@@ -255,7 +252,7 @@
             </span>
           </a>
           <a
-            href="#"
+            href="projeler.html"
             class="group inline-flex items-center gap-2.5 rounded-2xl border border-border-bright bg-transparent px-7 py-4 text-base font-medium text-muted-foreground transition-all duration-300 hover:border-primary/50 hover:text-foreground hover:bg-primary/5"
             aria-label="Çalışmalarımızı inceleyin"
           >
@@ -328,6 +325,7 @@
       bar3.classList.toggle('-translate-y-2', open);
     });
   </script>
+  <script src="js/whatsapp-widget.js"></script>
 
 </body>
 </html>
