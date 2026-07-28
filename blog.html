@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="dark" />
   <meta name="theme-color" content="#05050a" />
+  <link rel="stylesheet" href="css/main.css" />
   <title>Blog — Dijital Deneyimler, AI Tasarım & Kurumsal Web | Flow</title>
   <meta name="description" content="Dijital deneyimler, AI destekli tasarım ajansı süreçleri ve kurumsal web tasarım hakkında SEO odaklı rehberler, trendler ve strateji yazıları." />
   <link rel="canonical" href="https://flow.agency/blog.html" />
@@ -12,40 +13,6 @@
   <meta property="og:title" content="Flow Blog — Dijital Deneyimler & Kurumsal Web Tasarım" />
   <meta property="og:description" content="Dijital dönüşüm, UX/UI ve kurumsal web tasarımına dair uzman içerikler." />
   <meta property="og:locale" content="tr_TR" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-            display: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-          },
-          colors: {
-            background: '#05050a',
-            foreground: '#f0f0ff',
-            surface: '#0d0d16',
-            border: '#1c1c30',
-            'border-bright': '#2a2a44',
-            'muted-foreground': '#6b6b90',
-            primary: '#7c6fff',
-            accent: '#a78bfa',
-          },
-        },
-      },
-    };
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
-  <style>
-    html { -webkit-font-smoothing: antialiased; }
-    .font-display { letter-spacing: -0.03em; }
-    #mobile-menu { display: none; }
-    #mobile-menu.open { display: flex; }
-    .post-card { transition: border-color 0.2s, transform 0.2s; }
-    .post-card:hover { border-color: rgba(124, 111, 255, 0.45); transform: translateY(-2px); }
-  </style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -77,7 +44,7 @@
         <a href="blog.html" class="text-sm text-foreground font-medium" aria-current="page">Blog</a>
         <a href="kesif.html" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Proje Başlat</a>
       </nav>
-      <button id="menu-btn" class="md:hidden w-9 h-9 flex flex-col items-center justify-center gap-1.5 rounded-xl border border-border hover:border-border-bright transition-colors" aria-label="Menüyü aç" aria-expanded="false">
+      <button id="menu-btn" class="md:hidden w-11 h-11 flex flex-col items-center justify-center gap-1.5 rounded-xl border border-border hover:border-border-bright transition-colors" aria-label="Menüyü aç" aria-expanded="false">
         <span id="bar1" class="block w-4 h-0.5 bg-foreground transition-all duration-200"></span>
         <span id="bar2" class="block w-4 h-0.5 bg-foreground transition-all duration-200"></span>
         <span id="bar3" class="block w-4 h-0.5 bg-foreground transition-all duration-200"></span>
@@ -199,24 +166,7 @@
     <p>&copy; 2026 Flow. Tüm hakları saklıdır.</p>
   </footer>
 
-  <script>
-    const btn = document.getElementById('menu-btn');
-    const menu = document.getElementById('mobile-menu');
-    const bar1 = document.getElementById('bar1');
-    const bar2 = document.getElementById('bar2');
-    const bar3 = document.getElementById('bar3');
-    let open = false;
-    btn.addEventListener('click', () => {
-      open = !open;
-      menu.classList.toggle('open', open);
-      btn.setAttribute('aria-expanded', open);
-      bar1.classList.toggle('rotate-45', open);
-      bar1.classList.toggle('translate-y-2', open);
-      bar2.classList.toggle('opacity-0', open);
-      bar3.classList.toggle('-rotate-45', open);
-      bar3.classList.toggle('-translate-y-2', open);
-    });
-  </script>
-  <script src="js/whatsapp-widget.js"></script>
+  <script src="js/mobile-menu.js"></script>
+  <script src="js/whatsapp-widget.js" defer></script>
 </body>
 </html>

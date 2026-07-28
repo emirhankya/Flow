@@ -5,62 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="dark" />
   <meta name="theme-color" content="#05050a" />
+  <link rel="stylesheet" href="css/main.css" />
   <title>Teklif Formu — Flow</title>
   <meta name="description" content="Projeniz için teklif alın — iletişim bilgilerinizi paylaşın." />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-            display: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-          },
-          colors: {
-            background: '#05050a',
-            foreground: '#f0f0ff',
-            surface: '#0d0d16',
-            border: '#1c1c30',
-            'border-bright': '#2a2a44',
-            'muted-foreground': '#6b6b90',
-            primary: '#7c6fff',
-            accent: '#a78bfa',
-          },
-        },
-      },
-    };
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
-  <style>
-    html { -webkit-font-smoothing: antialiased; }
-    .font-display { letter-spacing: -0.03em; }
-    .cta-button { position: relative; overflow: hidden; }
-    .cta-button::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, #7c6fff, #a78bfa);
-      transition: opacity 0.3s ease;
-    }
-    .cta-button:hover::before { opacity: 0.85; }
-    .field-input {
-      width: 100%;
-      border-radius: 0.75rem;
-      border: 1px solid #1c1c30;
-      background: #05050a;
-      padding: 0.75rem 1rem;
-      font-size: 0.875rem;
-      color: #f0f0ff;
-      transition: border-color 0.2s;
-    }
-    .field-input:focus {
-      outline: none;
-      border-color: rgba(124, 111, 255, 0.6);
-    }
-    .field-input::placeholder { color: #6b6b90; }
-  </style>
 </head>
 <body class="min-h-full bg-background text-foreground font-sans antialiased">
 
@@ -210,6 +157,6 @@
     });
   </script>
 
-  <script src="js/whatsapp-widget.js"></script>
+  <script src="js/whatsapp-widget.js" defer></script>
 </body>
 </html>
