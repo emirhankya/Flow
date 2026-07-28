@@ -5,120 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="dark" />
   <meta name="theme-color" content="#05050a" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="preload" href="assets/fonts/plus-jakarta-sans-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin />
   <title>Flow - Digital agency</title>
   <meta name="description" content="Strateji, tasarım ve geliştirme — iddialı markalar için AI destekli dijital deneyimler." />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-            display: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-          },
-          colors: {
-            background: '#05050a',
-            foreground: '#f0f0ff',
-            surface: '#0d0d16',
-            border: '#1c1c30',
-            'border-bright': '#2a2a44',
-            'muted-foreground': '#6b6b90',
-            primary: '#7c6fff',
-            accent: '#a78bfa',
-          },
-        },
-      },
-    };
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
-  <style>
-    html {
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      text-rendering: optimizeLegibility;
-    }
-    .font-display {
-      letter-spacing: -0.03em;
-    }
-    @keyframes float-slow {
-      0%, 100% { transform: translateY(0) scale(1); }
-      50% { transform: translateY(-30px) scale(1.05); }
-    }
-    @keyframes float-medium {
-      0%, 100% { transform: translateY(0) scale(1); }
-      50% { transform: translateY(20px) scale(0.97); }
-    }
-    @keyframes shimmer {
-      0% { background-position: -200% center; }
-      100% { background-position: 200% center; }
-    }
-    @keyframes badge-pulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(124, 111, 255, 0.4); }
-      50% { box-shadow: 0 0 0 8px rgba(124, 111, 255, 0); }
-    }
-    @keyframes fade-up {
-      from { opacity: 0; transform: translateY(24px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .animate-float-slow { animation: float-slow 8s ease-in-out infinite; }
-    .animate-float-medium { animation: float-medium 6s ease-in-out infinite; }
-    .animate-badge-pulse { animation: badge-pulse 2.4s ease-in-out infinite; }
-    .animate-fade-up-1 { animation: fade-up 0.7s ease both 0.1s; }
-    .animate-fade-up-2 { animation: fade-up 0.7s ease both 0.25s; }
-    .animate-fade-up-3 { animation: fade-up 0.7s ease both 0.45s; }
-    .animate-fade-up-4 { animation: fade-up 0.7s ease both 0.65s; }
-    .animate-fade-up-5 { animation: fade-up 0.7s ease both 0.8s; }
-    .gradient-text {
-      background: linear-gradient(135deg, #ffffff 0%, #a78bfa 40%, #7c6fff 70%, #c4b5fd 100%);
-      background-size: 200% auto;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: shimmer 4s linear infinite;
-    }
-    .stroke-text {
-      -webkit-text-stroke-width: 1.5px;
-      -webkit-text-stroke-color: rgba(124, 111, 255, 0.7);
-      -webkit-text-fill-color: transparent;
-    }
-    .badge-label {
-      background: linear-gradient(90deg, #c4b5fd, #a78bfa, #7c6fff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .cta-button {
-      position: relative;
-      overflow: hidden;
-    }
-    .cta-button::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, #7c6fff, #a78bfa);
-      opacity: 1;
-      transition: opacity 0.3s ease;
-    }
-    .cta-button:hover::before { opacity: 0.85; }
-    .cta-button::after {
-      content: '';
-      position: absolute;
-      inset: -2px;
-      background: linear-gradient(135deg, #7c6fff, #a78bfa, #6d5af5);
-      border-radius: inherit;
-      z-index: -1;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      filter: blur(8px);
-    }
-    .cta-button:hover::after { opacity: 0.6; }
-    .cta-arrow { transition: transform 0.3s ease; }
-    .cta-button:hover .cta-arrow { transform: translateX(4px); }
-    #mobile-menu { display: none; }
-    #mobile-menu.open { display: flex; }
-  </style>
 </head>
 <body class="min-h-full bg-background text-foreground font-sans antialiased">
 
@@ -136,14 +26,14 @@
 
       <nav class="hidden md:flex items-center gap-8" aria-label="Ana menü">
         <a href="projeler.html" class="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">Projeler</a>
-        <a href="#" class="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">Hizmetler</a>
-        <a href="#" class="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">Hakkımızda</a>
+        <a href="#hizmetler" class="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">Hizmetler</a>
+        <a href="#hakkimizda" class="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">Hakkımızda</a>
         <a href="blog.html" class="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">Blog</a>
       </nav>
 
       <div class="flex items-center gap-3">
         <a
-          href="#"
+          href="kesif.html"
           class="hidden md:inline-flex items-center gap-2 text-sm font-medium border border-border-bright rounded-xl px-4 py-2 hover:border-primary/60 hover:bg-primary/10 transition-all duration-200"
         >
           İletişime Geç
@@ -153,7 +43,7 @@
         </a>
         <button
           id="menu-btn"
-          class="md:hidden w-9 h-9 flex flex-col items-center justify-center gap-1.5 rounded-xl border border-border hover:border-border-bright transition-colors"
+          class="md:hidden w-11 h-11 flex flex-col items-center justify-center gap-1.5 rounded-xl border border-border hover:border-border-bright transition-colors"
           aria-label="Menüyü aç"
           aria-expanded="false"
         >
@@ -166,10 +56,10 @@
 
     <div id="mobile-menu" class="mx-4 mt-2 md:hidden rounded-2xl border border-border bg-[#05050a]/95 backdrop-blur-xl px-6 py-6 flex-col gap-4">
       <a href="projeler.html" class="text-base text-muted-foreground hover:text-foreground transition-colors py-1 border-b border-border">Projeler</a>
-      <a href="#" class="text-base text-muted-foreground hover:text-foreground transition-colors py-1 border-b border-border">Hizmetler</a>
-      <a href="#" class="text-base text-muted-foreground hover:text-foreground transition-colors py-1 border-b border-border">Hakkımızda</a>
+      <a href="#hizmetler" class="text-base text-muted-foreground hover:text-foreground transition-colors py-1 border-b border-border">Hizmetler</a>
+      <a href="#hakkimizda" class="text-base text-muted-foreground hover:text-foreground transition-colors py-1 border-b border-border">Hakkımızda</a>
       <a href="blog.html" class="text-base text-muted-foreground hover:text-foreground transition-colors py-1 border-b border-border">Blog</a>
-      <a href="#" class="inline-flex items-center justify-center gap-2 text-sm font-medium border border-border-bright rounded-xl px-4 py-3 hover:border-primary/60 hover:bg-primary/10 transition-all duration-200 mt-2">
+      <a href="kesif.html" class="inline-flex items-center justify-center gap-2 text-sm font-medium border border-border-bright rounded-xl px-4 py-3 hover:border-primary/60 hover:bg-primary/10 transition-all duration-200 mt-2">
         İletişime Geç
       </a>
     </div>
@@ -222,7 +112,7 @@
         </div>
 
         <!-- Headline -->
-        <h1 class="animate-fade-up-2 font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold leading-[1.05] tracking-tight text-balance mb-6">
+        <h1 class="animate-fade-up-2 font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold leading-[1.05] tracking-tight text-balance mb-6">
           Dijital Deneyimler
           <br />
           <span class="gradient-text">İnşa Ediyoruz</span>
@@ -303,29 +193,43 @@
 
       </div>
     </section>
+
+    <section id="hizmetler" class="px-6 py-24 border-t border-border scroll-mt-28" aria-labelledby="hizmetler-baslik">
+      <div class="max-w-6xl mx-auto">
+        <header class="text-center max-w-3xl mx-auto mb-14">
+          <p class="text-xs font-semibold tracking-widest uppercase text-primary mb-4">Hizmetler</p>
+          <h2 id="hizmetler-baslik" class="font-display text-3xl sm:text-4xl font-extrabold tracking-tight mb-5">Stratejiden lansmana uçtan uca</h2>
+          <p class="text-muted-foreground text-lg leading-relaxed">Markanız için strateji, tasarım ve geliştirmeyi tek ekipte birleştiriyoruz.</p>
+        </header>
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="rounded-2xl border border-border bg-surface p-6">
+            <h3 class="font-display text-lg font-bold mb-2">Dijital Strateji</h3>
+            <p class="text-sm text-muted-foreground leading-relaxed">Marka konumlandırma, kullanıcı araştırması ve dönüşüm odaklı yol haritası.</p>
+          </article>
+          <article class="rounded-2xl border border-border bg-surface p-6">
+            <h3 class="font-display text-lg font-bold mb-2">UX/UI Tasarım</h3>
+            <p class="text-sm text-muted-foreground leading-relaxed">AI destekli süreçlerle hızlı iterasyon, insan dokunuşuyla kaliteli arayüzler.</p>
+          </article>
+          <article class="rounded-2xl border border-border bg-surface p-6 sm:col-span-2 lg:col-span-1">
+            <h3 class="font-display text-lg font-bold mb-2">Web Geliştirme</h3>
+            <p class="text-sm text-muted-foreground leading-relaxed">Performans, SEO ve ölçeklenebilirlik odaklı modern web uygulamaları.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="hakkimizda" class="px-6 py-24 border-t border-border scroll-mt-28" aria-labelledby="hakkimizda-baslik">
+      <div class="max-w-4xl mx-auto text-center">
+        <p class="text-xs font-semibold tracking-widest uppercase text-primary mb-4">Hakkımızda</p>
+        <h2 id="hakkimizda-baslik" class="font-display text-3xl sm:text-4xl font-extrabold tracking-tight mb-5">İlerici ekiplerin dijital ortağı</h2>
+        <p class="text-muted-foreground text-lg leading-relaxed mb-8">Flow, iddialı markalar için AI destekli tasarım ve geliştirme sunan bir dijital ajansdır. Her projede ölçülebilir sonuçlar ve sürdürülebilir büyüme hedefleriz.</p>
+        <a href="kesif.html" class="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-white hover:opacity-90 transition-opacity">Bizimle çalışın →</a>
+      </div>
+    </section>
   </main>
 
-  <script>
-    const btn = document.getElementById('menu-btn');
-    const menu = document.getElementById('mobile-menu');
-    const bar1 = document.getElementById('bar1');
-    const bar2 = document.getElementById('bar2');
-    const bar3 = document.getElementById('bar3');
-    let open = false;
-
-    btn.addEventListener('click', () => {
-      open = !open;
-      menu.classList.toggle('open', open);
-      btn.setAttribute('aria-expanded', open);
-      btn.setAttribute('aria-label', open ? 'Menüyü kapat' : 'Menüyü aç');
-      bar1.classList.toggle('rotate-45', open);
-      bar1.classList.toggle('translate-y-2', open);
-      bar2.classList.toggle('opacity-0', open);
-      bar3.classList.toggle('-rotate-45', open);
-      bar3.classList.toggle('-translate-y-2', open);
-    });
-  </script>
-  <script src="js/whatsapp-widget.js"></script>
+  <script src="js/mobile-menu.js"></script>
+  <script src="js/whatsapp-widget.js" defer></script>
 
 </body>
 </html>

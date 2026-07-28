@@ -11,7 +11,7 @@
   link.rel = 'noopener noreferrer';
   link.setAttribute('aria-label', "WhatsApp'tan bize yazın");
   link.className =
-    'fixed bottom-6 right-6 z-50 flex items-center group transition-transform duration-300 hover:scale-[1.02] active:scale-[0.98]';
+    'fixed z-50 flex items-center group transition-transform duration-300 hover:scale-[1.02] active:scale-[0.98] bottom-[max(1.5rem,env(safe-area-inset-bottom))] right-[max(1.5rem,env(safe-area-inset-right))]';
   link.innerHTML =
     '<span class="inline-flex items-center overflow-hidden whitespace-nowrap rounded-full border border-transparent bg-[#05050a]/95 px-0 py-2.5 text-sm font-semibold text-foreground shadow-lg backdrop-blur-sm max-w-0 opacity-0 transition-all duration-300 ease-out group-hover:mr-3 group-hover:max-w-[220px] group-hover:border-border group-hover:px-4 group-hover:opacity-100 group-hover:border-border-bright">' +
     "Bize WhatsApp'tan yazın" +
