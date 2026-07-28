@@ -1,0 +1,10 @@
+node_modules
+.git
+.gitignore
+.cursorrules
+*.log
+.env
+.env.*
+.DS_Store
+Thumbs.db
+README.md

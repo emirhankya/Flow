@@ -1,0 +1,26 @@
+{
+	admin off
+	persist_config off
+	auto_https off
+	log {
+		format json
+	}
+	servers {
+		trusted_proxies static private_ranges 100.0.0.0/8
+	}
+}
+
+:{$PORT:8080} {
+	root * /srv
+	encode gzip zstd
+	try_files {path} {path}.html {path}/index.html
+	file_server {
+		hide .git
+		hide .env*
+		hide node_modules
+	}
+	header {
+		X-Content-Type-Options "nosniff"
+		-Server
+	}
+}
