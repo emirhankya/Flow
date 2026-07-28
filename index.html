@@ -131,13 +131,8 @@
   <!-- NavBar -->
   <header class="fixed top-0 left-0 right-0 z-50">
     <div class="mx-4 mt-4 md:mx-8 lg:mx-12 rounded-2xl border border-border bg-[#05050a]/80 backdrop-blur-xl px-6 py-4 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-2" aria-label="Flow ana sayfa">
-        <span class="w-7 h-7 rounded-lg bg-primary flex items-center justify-center shrink-0">
-          <span class="text-white text-sm font-bold font-display leading-none" aria-hidden="true">F</span>
-        </span>
-        <span class="font-display font-semibold tracking-tight">
-          FLOW<span class="text-primary"></span>
-        </span>
+      <a href="index.html" class="font-display font-semibold tracking-tight gradient-text" aria-label="Flow ana sayfa">
+        FLOW
       </a>
 
       <nav class="hidden md:flex items-center gap-8" aria-label="Ana menü">
@@ -270,39 +265,32 @@
           </a>
         </div>
 
-        <!-- Trusted by -->
-        <div class="animate-fade-up-5 mt-20 w-full">
-          <div class="flex flex-col items-center gap-5">
-            <div class="flex items-center gap-4 w-full max-w-2xl">
-              <div class="flex-1 h-px bg-border"></div>
-              <span class="text-xs font-medium tracking-widest uppercase text-muted-foreground whitespace-nowrap">Güvenen ekipler</span>
-              <div class="flex-1 h-px bg-border"></div>
+        <!-- Stats -->
+        <div class="animate-fade-up-5 mt-20 w-full" aria-label="İstatistikler" style="font-family: Arial, Helvetica, sans-serif;">
+          <div class="flex flex-row flex-wrap items-start justify-center gap-x-10 gap-y-8 sm:gap-x-16 md:gap-x-20 max-w-4xl mx-auto">
+            <div class="flex flex-col items-center gap-1.5 min-w-[100px]">
+              <span class="text-2xl sm:text-3xl font-bold tracking-tight text-primary">
+                <span class="counter" data-target="2026" data-suffix="">0</span>
+              </span>
+              <span class="text-[11px] sm:text-xs text-muted-foreground text-center leading-snug">Kuruluş yılı</span>
             </div>
-            <div class="flex flex-wrap justify-center items-center gap-6 sm:gap-10">
-              <div class="group flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors duration-200 cursor-default" aria-label="Figma">
-                <span class="font-display text-lg font-bold" aria-hidden="true">F</span>
-                <span class="text-sm font-semibold tracking-tight">Figma</span>
-              </div>
-              <div class="group flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors duration-200 cursor-default" aria-label="Linear">
-                <span class="font-display text-lg font-bold" aria-hidden="true">L</span>
-                <span class="text-sm font-semibold tracking-tight">Linear</span>
-              </div>
-              <div class="group flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors duration-200 cursor-default" aria-label="Vercel">
-                <span class="font-display text-lg font-bold" aria-hidden="true">▲</span>
-                <span class="text-sm font-semibold tracking-tight">Vercel</span>
-              </div>
-              <div class="group flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors duration-200 cursor-default" aria-label="Notion">
-                <span class="font-display text-lg font-bold" aria-hidden="true">N</span>
-                <span class="text-sm font-semibold tracking-tight">Notion</span>
-              </div>
-              <div class="group flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors duration-200 cursor-default" aria-label="Framer">
-                <span class="font-display text-lg font-bold" aria-hidden="true">Fr</span>
-                <span class="text-sm font-semibold tracking-tight">Framer</span>
-              </div>
-              <div class="group flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors duration-200 cursor-default" aria-label="Arc">
-                <span class="font-display text-lg font-bold" aria-hidden="true">A</span>
-                <span class="text-sm font-semibold tracking-tight">Arc</span>
-              </div>
+            <div class="flex flex-col items-center gap-1.5 min-w-[100px]">
+              <span class="text-2xl sm:text-3xl font-bold tracking-tight text-primary">
+                <span class="counter" data-target="100" data-suffix="+">0</span>
+              </span>
+              <span class="text-[11px] sm:text-xs text-muted-foreground text-center leading-snug">Müşteriye hizmet verildi</span>
+            </div>
+            <div class="flex flex-col items-center gap-1.5 min-w-[100px]">
+              <span class="text-2xl sm:text-3xl font-bold tracking-tight text-primary">
+                <span class="counter" data-target="10" data-suffix="+">0</span>
+              </span>
+              <span class="text-[11px] sm:text-xs text-muted-foreground text-center leading-snug">Farklı sektör</span>
+            </div>
+            <div class="flex flex-col items-center gap-1.5 min-w-[100px]">
+              <span class="text-2xl sm:text-3xl font-bold tracking-tight text-primary">
+                %<span class="counter" data-target="95" data-suffix="">0</span>
+              </span>
+              <span class="text-[11px] sm:text-xs text-muted-foreground text-center leading-snug">Memnuniyet</span>
             </div>
           </div>
         </div>
@@ -310,6 +298,65 @@
       </div>
     </section>
   </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-border bg-background">
+    <div class="mx-auto max-w-6xl px-6 py-16 md:px-8 lg:px-12">
+      <div class="grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-10 lg:gap-16">
+
+        <div class="flex flex-col gap-5">
+          <a href="index.html" class="font-display text-2xl font-bold tracking-tight gradient-text w-fit" aria-label="Flow ana sayfa">
+            FLOW
+          </a>
+          <p class="text-sm leading-relaxed text-muted-foreground max-w-xs">
+            Strateji, tasarım ve geliştirme — iddialı markalar için AI destekli dijital deneyimler inşa ediyoruz.
+          </p>
+          <div class="flex items-center gap-5 pt-1">
+            <a href="#" class="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200" aria-label="LinkedIn">LinkedIn</a>
+            <a href="#" class="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200" aria-label="Twitter">Twitter</a>
+            <a href="#" class="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200" aria-label="Instagram">Instagram</a>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-xs font-semibold tracking-[0.18em] uppercase text-primary mb-5">Navigasyon</h2>
+          <ul class="flex flex-col gap-3">
+            <li><a href="index.html" class="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">Ana Sayfa</a></li>
+            <li><a href="projeler.html" class="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">Projeler</a></li>
+            <li><a href="#" class="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">Hizmetler</a></li>
+            <li><a href="#" class="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">Hakkımızda</a></li>
+            <li><a href="blog.html" class="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">Blog</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="text-xs font-semibold tracking-[0.18em] uppercase text-primary mb-5">Hizmetler</h2>
+          <ul class="flex flex-col gap-3">
+            <li><a href="#" class="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">Strateji &amp; Danışmanlık</a></li>
+            <li><a href="#" class="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">UI/UX Tasarım</a></li>
+            <li><a href="#" class="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">Web Geliştirme</a></li>
+            <li><a href="#" class="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">AI Entegrasyonu</a></li>
+            <li><a href="#" class="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200">Marka Kimliği</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="mt-14 pt-8 border-t border-border flex flex-col items-center gap-3 text-center">
+        <nav class="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm text-muted-foreground" aria-label="Yasal">
+          <a href="gizlilik-politikasi.html" class="hover:text-foreground transition-colors duration-200">Gizlilik Politikası</a>
+          <span class="text-border-bright select-none" aria-hidden="true">|</span>
+          <a href="kullanim-kosullari.html" class="hover:text-foreground transition-colors duration-200">Kullanım Koşulları</a>
+          <span class="text-border-bright select-none" aria-hidden="true">|</span>
+          <a href="kvkk-aydinlatma-metni.html" class="hover:text-foreground transition-colors duration-200">KVKK Aydınlatma Metni</a>
+        </nav>
+        <p class="text-xs leading-relaxed text-muted-foreground/80 max-w-2xl">
+          Bu site Meta Platforms, Inc. ile herhangi bir şekilde bağlantılı değildir. Meta, Meta Platforms, Inc.'in tescilli markasıdır.
+        </p>
+        <p class="text-xs text-muted-foreground/60">&copy; 2026 Flow. Tüm hakları saklıdır.</p>
+      </div>
+    </div>
+  </footer>
 
   <script>
     const btn = document.getElementById('menu-btn');
@@ -330,6 +377,36 @@
       bar3.classList.toggle('-rotate-45', open);
       bar3.classList.toggle('-translate-y-2', open);
     });
+
+    function animateCounter(el) {
+      const target = Number(el.dataset.target);
+      const suffix = el.dataset.suffix || '';
+      const duration = 1800;
+      const start = performance.now();
+
+      function tick(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.floor(eased * target) + suffix;
+        if (progress < 1) requestAnimationFrame(tick);
+        else el.textContent = target + suffix;
+      }
+
+      requestAnimationFrame(tick);
+    }
+
+    const counters = document.querySelectorAll('.counter');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          animateCounter(entry.target);
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.4 }
+    );
+    counters.forEach((el) => observer.observe(el));
   </script>
   <script src="js/whatsapp-widget.js"></script>
 
