@@ -86,7 +86,12 @@
 
       <div id="discovery-summary" class="hidden mb-6 rounded-xl border border-primary/20 bg-primary/5 px-4 py-3 text-sm text-muted-foreground"></div>
 
-      <form id="quote-form" class="rounded-2xl border border-border bg-surface/60 backdrop-blur-sm p-6 sm:p-8 space-y-5">
+      <form
+        id="quote-form"
+        method="POST"
+        class="rounded-2xl border border-border bg-surface/60 backdrop-blur-sm p-6 sm:p-8 space-y-5"
+      >
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
 
         <div>
           <label for="name" class="block text-sm font-medium mb-2">Ad Soyad</label>
@@ -108,11 +113,14 @@
           <textarea id="message" name="message" rows="4" class="field-input resize-none" placeholder="Hedefleriniz, referanslar veya ek notlar..."></textarea>
         </div>
 
+        <p id="form-error" class="hidden text-sm text-red-400" role="alert"></p>
+
         <button
           type="submit"
-          class="cta-button w-full inline-flex items-center justify-center gap-2 rounded-2xl px-8 py-4 text-base font-semibold text-white shadow-[0_0_40px_rgba(124,111,255,0.25)] transition-all duration-300 hover:shadow-[0_0_60px_rgba(124,111,255,0.45)] hover:scale-[1.01] active:scale-[0.99]"
+          id="submit-btn"
+          class="cta-button w-full inline-flex items-center justify-center gap-2 rounded-2xl px-8 py-4 text-base font-semibold text-white shadow-[0_0_40px_rgba(124,111,255,0.25)] transition-all duration-300 hover:shadow-[0_0_60px_rgba(124,111,255,0.45)] hover:scale-[1.01] active:scale-[0.99] disabled:opacity-60 disabled:pointer-events-none"
         >
-          <span class="relative z-10">Teklif Talebini Gönder</span>
+          <span class="relative z-10" id="submit-btn-text">Teklif Talebini Gönder</span>
         </button>
       </form>
 
@@ -122,7 +130,10 @@
     </div>
   </main>
 
+  <script src="js/formspree.js"></script>
   <script>
+    document.getElementById('quote-form').action = FLOW_FORMSPREE.ENDPOINT;
+
     const labels = {
       projectType: {
         web: 'Web sitesi / Landing',
@@ -158,11 +169,44 @@
         labels.timeline[data.timeline];
     }
 
-    document.getElementById('quote-form').addEventListener('submit', (e) => {
+    document.getElementById('quote-form').addEventListener('submit', async (e) => {
       e.preventDefault();
-      document.getElementById('quote-form').classList.add('hidden');
-      document.getElementById('success-message').classList.remove('hidden');
-      sessionStorage.removeItem('flowDiscovery');
+
+      const form = e.target;
+      const submitBtn = document.getElementById('submit-btn');
+      const submitBtnText = document.getElementById('submit-btn-text');
+      const errorEl = document.getElementById('form-error');
+      const discovery = JSON.parse(sessionStorage.getItem('flowDiscovery') || '{}');
+      const formData = Object.fromEntries(new FormData(form));
+
+      if (formData._gotcha) return;
+
+      errorEl.classList.add('hidden');
+      submitBtn.disabled = true;
+      submitBtnText.textContent = 'Gönderiliyor...';
+
+      try {
+        await FLOW_FORMSPREE.submit({
+          name: formData.name,
+          email: formData.email,
+          company: formData.company || '',
+          message: formData.message || '',
+          project_type: labels.projectType[discovery.projectType] || discovery.projectType || '',
+          budget: labels.budget[discovery.budget] || discovery.budget || '',
+          timeline: labels.timeline[discovery.timeline] || discovery.timeline || '',
+          _replyto: formData.email,
+          _subject: 'Flow Teklif Talebi — ' + formData.name,
+        });
+
+        form.classList.add('hidden');
+        document.getElementById('success-message').classList.remove('hidden');
+        sessionStorage.removeItem('flowDiscovery');
+      } catch {
+        errorEl.textContent = 'Gönderim sırasında bir hata oluştu. Lütfen tekrar deneyin.';
+        errorEl.classList.remove('hidden');
+        submitBtn.disabled = false;
+        submitBtnText.textContent = 'Teklif Talebini Gönder';
+      }
     });
   </script>
 

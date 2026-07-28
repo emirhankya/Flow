@@ -1,7 +1,7 @@
 (function () {
   if (document.getElementById('whatsapp-widget')) return;
 
-  const NUMBER = '905551234567';
+  const NUMBER = '905439458537';
   const MESSAGE = encodeURIComponent('Merhaba, web sitenizden ulaşıyorum.');
 
   const link = document.createElement('a');
