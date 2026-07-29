@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Atlas Finans eski landing mockup">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="auto" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Atlas Finans eski landing mockup">
   <rect width="800" height="500" fill="#eef2f6"/>
   <rect y="0" width="800" height="36" fill="#dde4ec"/>
   <circle cx="20" cy="18" r="6" fill="#bbb"/>

@@ -1,6 +1,14 @@
 window.FLOW_FORMSPREE = {
   ENDPOINT: 'https://formspree.io/f/mvzelqrl',
   SITE_URL: 'https://flow-production-bcd2.up.railway.app',
+  TURNSTILE_SITE_KEY: '',
+
+  init() {
+    const local = window.FLOW_FORMSPREE_LOCAL || {};
+    if (local.TURNSTILE_SITE_KEY) {
+      this.TURNSTILE_SITE_KEY = local.TURNSTILE_SITE_KEY;
+    }
+  },
 
   async submit(data) {
     const response = await fetch(this.ENDPOINT, {
@@ -21,3 +29,5 @@ window.FLOW_FORMSPREE = {
     return result;
   },
 };
+
+FLOW_FORMSPREE.init();

@@ -33,6 +33,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
   <style>
     html { -webkit-font-smoothing: antialiased; }
     .font-display { letter-spacing: -0.03em; }
@@ -120,6 +121,8 @@
 
         <p id="form-error" class="hidden text-sm text-red-400" role="alert"></p>
 
+        <div id="turnstile-widget" class="cf-turnstile"></div>
+
         <button
           type="submit"
           id="submit-btn"
@@ -166,9 +169,21 @@
   <script src="js/flow-contact.local.js"></script>
   <script src="js/flow-contact.js"></script>
   <script src="js/flow-discovery.js"></script>
+  <script src="js/formspree.local.js"></script>
   <script src="js/formspree.js"></script>
   <script>
     document.getElementById('quote-form').action = FLOW_FORMSPREE.ENDPOINT;
+
+    const turnstileWidget = document.getElementById('turnstile-widget');
+    if (turnstileWidget && FLOW_FORMSPREE.TURNSTILE_SITE_KEY) {
+      turnstileWidget.setAttribute('data-sitekey', FLOW_FORMSPREE.TURNSTILE_SITE_KEY);
+    }
+
+    function resetTurnstile() {
+      if (window.turnstile && turnstileWidget) {
+        turnstile.reset(turnstileWidget);
+      }
+    }
 
     const hasWhatsApp = !!FLOW_DISCOVERY.WA_NUMBER;
     const urgentContact = document.getElementById('urgent-contact');
@@ -230,6 +245,13 @@
 
       if (formData._gotcha) return;
 
+      const turnstileToken = formData['cf-turnstile-response'];
+      if (!turnstileToken) {
+        errorEl.textContent = 'Lütfen bot doğrulamasını tamamlayın.';
+        errorEl.classList.remove('hidden');
+        return;
+      }
+
       errorEl.classList.add('hidden');
       submitBtn.disabled = true;
       submitBtnText.textContent = 'Gönderiliyor...';
@@ -246,6 +268,7 @@
           timeline: L.timeline[current.timeline] || current.timeline || '',
           _replyto: formData.email,
           _subject: 'Flow Teklif Talebi — ' + formData.name,
+          'cf-turnstile-response': turnstileToken,
         });
 
         form.classList.add('hidden');
@@ -267,6 +290,7 @@
       } catch {
         errorEl.textContent = 'Gönderim sırasında bir hata oluştu. Lütfen tekrar deneyin veya WhatsApp ile yazın.';
         errorEl.classList.remove('hidden');
+        resetTurnstile();
         submitBtn.disabled = false;
         submitBtnText.textContent = 'Teklif Talebini Gönder';
       }
