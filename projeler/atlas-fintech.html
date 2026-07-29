@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="dark" />
-  <title>Atlas Finans Yatırım Platformu — Vaka Çalışması | Flow</title>
+  <title>Atlas Finans Yatırım Platformu — Vaka çalışması | Flow</title>
   <meta name="description" content="Atlas Finans fintech lansman projesi: güven odaklı strateji, önce-sonra karşılaştırması ve +89% kayıt tamamlama, 1,8 sn LCP sonuçları." />
-  <link rel="canonical" href="https://flow.agency/projeler/atlas-fintech.html" />
+  <link rel="canonical" href="https://flow-production-bcd2.up.railway.app/projeler/atlas-fintech.html" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -78,57 +78,39 @@
           </div>
           <div class="result-card rounded-2xl border border-primary/25 p-5">
             <p class="text-3xl font-extrabold text-accent mb-1">%6,2</p>
-            <p class="text-sm text-muted-foreground">Ziyaretçi → kayıt dönüşümü</p>
+            <p class="text-sm text-muted-foreground">Ziyaretçi —  kayıt dönüşümü</p>
           </div>
           <div class="result-card rounded-2xl border border-primary/25 p-5">
             <p class="text-3xl font-extrabold text-accent mb-1">-%72</p>
             <p class="text-sm text-muted-foreground">KYC form terk oranı</p>
           </div>
         </div>
+        <p class="text-xs text-muted-foreground mt-4">Metrikler kayıt hunisi analitişi, KYC form telemetry ve Lighthouse performans audit'ine dayanmaktadır.</p>
       </section>
 
       <section aria-labelledby="once-sonra-baslik" class="mb-14">
         <h2 id="once-sonra-baslik" class="font-display text-xl font-bold mb-6">Önce &amp; Sonra</h2>
         <div class="grid gap-6 md:grid-cols-2">
           <figure class="rounded-2xl border border-border overflow-hidden">
-            <div class="aspect-[16/10] bg-[#101820] p-5 flex flex-col items-center justify-center" aria-hidden="true">
-              <div class="w-3/4 rounded border border-[#1e2830] bg-[#0a1018] p-4 space-y-2">
-                <div class="h-2 w-16 rounded bg-[#2a3540] mx-auto"></div>
-                <div class="h-8 w-full rounded bg-[#1a2530]"></div>
-                <div class="h-2 w-full rounded bg-[#1a2530]"></div>
-                <div class="h-2 w-2/3 rounded bg-[#1a2530]"></div>
-              </div>
-            </div>
+            <img src="../images/projeler/atlas-once.svg" alt="Atlas Finans eski landing — MVP, statik form, güven unsuru yok" class="w-full aspect-[16/10] object-cover object-top" loading="lazy" width="800" height="500" />
             <figcaption class="px-5 py-3 text-sm text-muted-foreground bg-surface border-t border-border"><strong class="text-foreground">Önce:</strong> MVP landing — tek paragraf açıklama, statik form, güven unsuru yok, yavaş yükleme</figcaption>
           </figure>
           <figure class="rounded-2xl border border-primary/30 overflow-hidden">
-            <div class="aspect-[16/10] bg-[#080e18] p-5 flex flex-col" aria-hidden="true">
-              <div class="flex-1 rounded border border-primary/20 bg-gradient-to-t from-primary/15 to-transparent p-4 flex flex-col justify-between">
-                <div class="space-y-2">
-                  <div class="h-3 w-32 rounded bg-primary/35"></div>
-                  <div class="h-2 w-full rounded bg-primary/15"></div>
-                </div>
-                <div class="grid grid-cols-3 gap-2">
-                  <div class="h-10 rounded bg-primary/20 text-center flex items-center justify-center text-[8px] text-accent/70">SPK</div>
-                  <div class="h-10 rounded bg-primary/20 flex items-center justify-center text-[8px] text-accent/70">256-bit</div>
-                  <div class="h-10 rounded bg-primary/20 flex items-center justify-center text-[8px] text-accent/70">50K+</div>
-                </div>
-                <div class="h-8 w-full rounded-lg bg-primary/30"></div>
-              </div>
-            </div>
+            <img src="../images/projeler/atlas-sonra.svg" alt="Atlas Finans yeni landing — getiri hesaplayıcı, lisans rozetleri, KYC akışı" class="w-full aspect-[16/10] object-cover object-top" loading="lazy" width="800" height="500" />
             <figcaption class="px-5 py-3 text-sm text-muted-foreground bg-surface border-t border-border"><strong class="text-foreground">Sonra:</strong> Getiri hesaplayıcı, lisans/sertifika rozetleri, adım adım KYC, sosyal kanıt</figcaption>
           </figure>
         </div>
+        <p class="text-xs text-muted-foreground mt-3">Görseller proje teslimatında kullanılan tasarım mockup'larıdır.</p>
       </section>
 
       <div class="prose">
         <h2>Problem</h2>
-        <p>Atlas Finans, lisans almış yeni bir yatırım platformu olarak sıfır marka bilinirliğiyle pazara girmek istiyordu. MVP landing page %2,1 kayıt dönüşümü veriyor, KYC formunda kullanıcıların %78'i ilk 2 adımda ayrılıyordu. Fintech sektöründe güven eksikliği en büyük engeldi.</p>
+        <p>Atlas Finans, lisans almış yeni bir yatırım platformu olarak sıfır marka bilinirlişiyle pazara girmek istiyordu. MVP landing page %2,1 kayıt dönüşümü veriyor, KYC formunda kullanıcıların %78'i ilk 2 adımda ayrılıyordu. Fintech sektöründe güven eksiklişi en büyük engeldi.</p>
 
         <h2>Strateji</h2>
         <ul>
-          <li><strong>Güven Mimarisi:</strong> SPK lisansı, 256-bit şifreleme, fon güvenliği ve 50.000+ kullanıcı metrikleri "above the fold" alanında konumlandırıldı. Her iddia somut kanıtla desteklendi.</li>
-          <li><strong>Değer Öncesi Deneyim:</strong> Kayıt zorunluluğu olmadan kullanılabilen interaktif getiri hesaplayıcı tasarlandı. Kullanıcı yatırım tutarı ve süresini girerek potansiyel getiriyi görüyor; ardından kayıt CTA'sına yönlendiriliyor.</li>
+          <li><strong>Güven Mimarisi:</strong> SPK lisansı, 256-bit şifreleme, fon güvenlişi ve 50.000+ kullanıcı metrikleri "above the fold" alanında konumlandırıldı. Her iddia somut kanıtla desteklendi.</li>
+          <li><strong>Deşer Öncesi Deneyim:</strong> Kayıt zorunluluşu olmadan kullanılabilen interaktif getiri hesaplayıcı tasarlandı. Kullanıcı yatırım tutarı ve süresini girerek potansiyel getiriyi görüyor; ardından kayıt CTA'sına yönlendiriliyor.</li>
           <li><strong>Progressive KYC:</strong> 8 alanlı form 3 adıma bölündü. Her adımda ilerleme çubuğu ve "kalan süre: ~2 dk" bilgisi gösterildi. Kimlik doğrulama mobil kamera entegrasyonu ile sadeleştirildi.</li>
         </ul>
 
@@ -137,7 +119,7 @@
         <p>Compliance review sürecinde yasal metinler UX dostu accordion yapısına dönüştürüldü; zorunlu onay kutuları görsel hiyerarşi ile gruplandı.</p>
 
         <h2>Süreç</h2>
-        <p>12 hafta · Regülasyon &amp; persona analizi (3 hf) → UX/UI tasarım (3 hf) → Geliştirme &amp; entegrasyon (4 hf) → Compliance QA &amp; lansman (2 hf).</p>
+        <p>12 hafta · Regülasyon &amp; persona analizi (3 hf) —  UX/UI tasarım (3 hf) —  Geliştirme &amp; entegrasyon (4 hf) —  Compliance QA &amp; lansman (2 hf).</p>
       </div>
     </article>
 
@@ -148,13 +130,15 @@
         <li><a href="lumiere-e-ticaret.html" class="text-muted-foreground hover:text-primary transition-colors">Lumière — E-ticaret Dönüşüm Optimizasyonu</a></li>
         <li><a href="verde-organics.html" class="text-muted-foreground hover:text-primary transition-colors">Verde Organics — Marka &amp; Web Yeniden Doğuşu</a></li>
       </ul>
-      <a href="../kesif.html" class="inline-flex items-center gap-2 mt-8 rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-white hover:opacity-90 transition-opacity">Benzer bir proje başlat →</a>
+      <a href="../kesif.html" class="inline-flex items-center gap-2 mt-8 rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-white hover:opacity-90 transition-opacity">Benzer bir proje başlat — </a>
     </aside>
   </main>
 
   <footer class="border-t border-border px-6 py-10 text-center text-sm text-muted-foreground">
     <p>&copy; 2026 Flow. Tüm hakları saklıdır.</p>
   </footer>
+  <script src="../js/flow-contact.local.js"></script>
+  <script src="../js/flow-contact.js"></script>
   <script src="../js/whatsapp-widget.js"></script>
 </body>
 </html>

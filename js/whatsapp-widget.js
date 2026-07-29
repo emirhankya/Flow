@@ -1,7 +1,10 @@
 (function () {
   if (document.getElementById('whatsapp-widget')) return;
 
-  const NUMBER = '905439458537';
+  const contact = Object.assign({}, window.FLOW_CONTACT, window.FLOW_DISCOVERY);
+  const NUMBER = contact.WA_NUMBER;
+  if (!NUMBER) return;
+
   const MESSAGE = encodeURIComponent('Merhaba, web sitenizden ulaşıyorum.');
 
   const link = document.createElement('a');

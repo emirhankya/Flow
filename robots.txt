@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://flowebs.netlify.app/sitemap.xml
+Sitemap: https://flow-production-bcd2.up.railway.app/sitemap.xml

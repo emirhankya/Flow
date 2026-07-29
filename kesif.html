@@ -181,23 +181,37 @@
     </div>
   </main>
 
+  <script src="js/flow-contact.local.js"></script>
+  <script src="js/flow-contact.js"></script>
+  <script src="js/flow-discovery.js"></script>
   <script>
     const form = document.getElementById('discovery-form');
     const errorEl = document.getElementById('form-error');
+    const params = new URLSearchParams(window.location.search);
+
+    const saved = FLOW_DISCOVERY.fromSearchParams(params) || FLOW_DISCOVERY.load();
+    if (saved) {
+      for (const [key, value] of Object.entries(saved)) {
+        const input = form.querySelector('[name="' + key + '"][value="' + value + '"]');
+        if (input) input.checked = true;
+      }
+    }
 
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       const data = Object.fromEntries(new FormData(form));
-      if (!data.projectType || !data.budget || !data.timeline) {
+      if (!FLOW_DISCOVERY.isValid(data)) {
         errorEl.classList.remove('hidden');
         return;
       }
       errorEl.classList.add('hidden');
-      sessionStorage.setItem('flowDiscovery', JSON.stringify(data));
-      window.location.href = 'teklif.html';
+      FLOW_DISCOVERY.save(data);
+      window.location.href = 'teklif.html?' + FLOW_DISCOVERY.toQueryString(data);
     });
   </script>
 
+  <script src="js/flow-contact.local.js"></script>
+  <script src="js/flow-contact.js"></script>
   <script src="js/whatsapp-widget.js"></script>
 </body>
 </html>

@@ -1,7 +1,6 @@
 window.FLOW_FORMSPREE = {
   ENDPOINT: 'https://formspree.io/f/mvzelqrl',
-  NOTIFICATION_EMAIL: 'emirhannkya@gmail.com',
-  SITE_URL: 'https://flowebs.netlify.app',
+  SITE_URL: 'https://flow-production-bcd2.up.railway.app',
 
   async submit(data) {
     const response = await fetch(this.ENDPOINT, {

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Lumière yeni e-ticaret mockup">
+  <defs>
+    <linearGradient id="lm-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a0f18"/>
+      <stop offset="100%" stop-color="#0d0810"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#lm-bg)"/>
+  <rect y="0" width="800" height="36" fill="#120a12"/>
+  <circle cx="20" cy="18" r="6" fill="#ef4444" opacity="0.6"/>
+  <circle cx="40" cy="18" r="6" fill="#eab308" opacity="0.6"/>
+  <circle cx="60" cy="18" r="6" fill="#22c55e" opacity="0.6"/>
+  <rect y="36" width="800" height="48" fill="#0f0810" stroke="#2a1830"/>
+  <text x="24" y="66" font-family="Georgia,serif" font-size="18" fill="#e8c4d8">Lumière</text>
+  <text x="600" y="66" font-family="system-ui,sans-serif" font-size="11" fill="#8b6b80">Sepet (2)</text>
+  <rect x="24" y="100" width="370" height="280" rx="12" fill="#251830" stroke="#3d2848"/>
+  <rect x="40" y="120" width="338" height="200" rx="8" fill="#3d2848"/>
+  <text x="140" y="230" font-family="system-ui,sans-serif" font-size="11" fill="#a78bfa">Lifestyle ürün görseli</text>
+  <rect x="40" y="330" width="60" height="40" rx="6" fill="#3d2848" stroke="#7c6fff" stroke-width="2"/>
+  <rect x="110" y="330" width="60" height="40" rx="6" fill="#251830"/>
+  <rect x="180" y="330" width="60" height="40" rx="6" fill="#251830"/>
+  <rect x="410" y="100" width="366" height="280" fill="#0f0810"/>
+  <text x="426" y="132" font-family="system-ui,sans-serif" font-size="10" fill="#7c6fff"> 847 deerlendirme</text>
+  <text x="426" y="168" font-family="Georgia,serif" font-size="22" fill="#f0e0ea">Gece Onar1m Serumu</text>
+  <text x="426" y="200" font-family="system-ui,sans-serif" font-size="26" font-weight="700" fill="#f0f0ff">º349</text>
+  <text x="520" y="200" font-family="system-ui,sans-serif" font-size="12" fill="#6b6b90">Ücretsiz kargo · 2 gün</text>
+  <rect x="426" y="220" width="340" height="36" rx="8" fill="#7c6fff"/>
+  <text x="520" y="243" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#fff">Sepete Ekle  Tek T1k</text>
+  <rect x="426" y="272" width="340" height="48" rx="8" fill="#1a1020" stroke="#2a1830"/>
+  <text x="442" y="292" font-family="system-ui,sans-serif" font-size="10" fill="#a78bfa">Bundle önerisi</text>
+  <text x="442" y="308" font-family="system-ui,sans-serif" font-size="11" fill="#8b6b90">Serum + Nemlendirici  %15 indirim</text>
+  <rect x="24" y="400" width="752" height="80" rx="12" fill="#1a1020" stroke="#7c6fff" stroke-opacity="0.3"/>
+  <text x="48" y="430" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#f0f0ff">Tek sayfa checkout</text>
+  <text x="48" y="452" font-family="system-ui,sans-serif" font-size="11" fill="#6b6b90">Misafir ödeme · ^effaf kargo · Apple Pay</text>
+  <rect x="580" y="418" width="160" height="44" rx="10" fill="#7c6fff"/>
+  <text x="620" y="446" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#fff">Ödemeye Geç</text>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="NovaTech eski web sitesi mockup">
+  <rect width="800" height="500" fill="#e8e8e8"/>
+  <rect y="0" width="800" height="36" fill="#d4d4d4"/>
+  <circle cx="20" cy="18" r="6" fill="#bbb"/>
+  <circle cx="40" cy="18" r="6" fill="#bbb"/>
+  <circle cx="60" cy="18" r="6" fill="#bbb"/>
+  <rect x="100" y="10" width="600" height="16" rx="4" fill="#c8c8c8"/>
+  <rect y="36" width="800" height="48" fill="#fff" stroke="#ccc"/>
+  <text x="24" y="66" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#888">NovaTech</text>
+  <text x="680" y="66" font-family="system-ui,sans-serif" font-size="11" fill="#aaa">Hakk1m1zda | Ürünler | 0leti_im</text>
+  <rect x="24" y="100" width="180" height="360" fill="#f0f0f0" stroke="#ddd"/>
+  <rect x="36" y="120" width="150" height="10" rx="2" fill="#ccc"/>
+  <rect x="36" y="140" width="130" height="8" rx="2" fill="#ddd"/>
+  <rect x="36" y="158" width="140" height="8" rx="2" fill="#ddd"/>
+  <rect x="36" y="176" width="120" height="8" rx="2" fill="#ddd"/>
+  <rect x="220" y="100" width="556" height="360" fill="#fafafa" stroke="#ddd"/>
+  <rect x="240" y="120" width="300" height="16" rx="2" fill="#bbb"/>
+  <rect x="240" y="148" width="480" height="8" rx="2" fill="#ddd"/>
+  <rect x="240" y="164" width="440" height="8" rx="2" fill="#ddd"/>
+  <rect x="240" y="180" width="400" height="8" rx="2" fill="#ddd"/>
+  <rect x="240" y="210" width="160" height="28" rx="4" fill="#aaa"/>
+  <rect x="240" y="260" width="516" height="120" fill="#eee" stroke="#ddd"/>
+  <text x="380" y="330" font-family="system-ui,sans-serif" font-size="11" fill="#bbb">Yükleniyor...</text>
+</svg>
